@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a class="navbar-brand" href="index.php">Acasa</a>
         <a class="navbar-brand" href="ex1.php">Ex 1</a>
         <a class="navbar-brand" href="ex2.php">Ex 2</a>
+        <a class="navbar-brand" href="ex3.php">Ex 3</a>
     </nav>
     <form class="mt-5" method="post">
         <div class="form-group">
