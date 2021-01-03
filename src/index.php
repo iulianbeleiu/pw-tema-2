@@ -20,6 +20,7 @@ $employees = $statements->getAllEployeesComputersAndProducts();
         <nav class="navbar sticky-top navbar-light bg-light mt-4">
             <a class="navbar-brand" href="index.php">Acasa</a>
             <a class="navbar-brand" href="ex1.php">Ex 1</a>
+            <a class="navbar-brand" href="ex2.php">Ex 2</a>
         </nav>
         <table class="table table-bordered mt-4">
             <thead>
