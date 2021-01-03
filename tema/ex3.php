@@ -1,8 +1,8 @@
 <?php
 
-require 'Classes/Statements.php';
+require 'Sql/Query.php';
 
-$statements = new Statements();
+$statements = new Query();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $statements->adaugaArticole($_POST);
@@ -28,6 +28,7 @@ $articole = $statements->articole();
         <a class="navbar-brand" href="ex1.php">Ex 1</a>
         <a class="navbar-brand" href="ex2.php">Ex 2</a>
         <a class="navbar-brand" href="ex3.php">Ex 3</a>
+        <a class="navbar-brand" href="ex4.php">Ex 4</a>
     </nav>
     <form class="mt-5" method="post">
         <div class="row">

@@ -1,6 +1,6 @@
 <?php
 
-class DatabaseConnection
+class Conexiune
 {
     private static $instance = null;
 
@@ -12,7 +12,7 @@ class DatabaseConnection
 
     private $password = 'root';
 
-    private $databaseName = 'tema_pw';
+    private $databaseName = 'tema';
 
     private function __construct() {
         try {
@@ -30,7 +30,7 @@ class DatabaseConnection
 
     public static function getInstance() {
         if (is_null(self::$instance)) {
-            self::$instance = new DatabaseConnection();
+            self::$instance = new Conexiune();
         }
 
         return self::$instance;

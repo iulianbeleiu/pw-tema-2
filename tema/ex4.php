@@ -1,10 +1,10 @@
 <?php
 
-require 'Classes/Statements.php';
+require 'Sql/Query.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $statements = new Statements();
-    $oameni = $statements->cautaDupaVarsta($_POST['varsta']);
+    $statements = new Query();
+    $count = $statements->stergeDupaVarsta($_POST['varsta']);
 }
 ?>
 <!doctype html>
@@ -25,35 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a class="navbar-brand" href="ex1.php">Ex 1</a>
         <a class="navbar-brand" href="ex2.php">Ex 2</a>
         <a class="navbar-brand" href="ex3.php">Ex 3</a>
+        <a class="navbar-brand" href="ex4.php">Ex 4</a>
     </nav>
     <form class="mt-5" method="post">
+        <?php if (isset($count)): ?>
+            <p>Ati sters: <?= $count ?> oameni.</p>
+        <?php endif; ?>
         <div class="form-group">
-            <label for="exampleInputEmail1">Varsta</label>
+            <label for="varsta">Varsta</label>
             <input type="number" class="form-control" id="varsta" name="varsta">
         </div>
-        <button type="submit" class="btn btn-primary">Cauta</button>
+        <button type="submit" class="btn btn-primary">Sterge</button>
     </form>
-
-    <?php if (isset($oameni)): ?>
-        <table class="table table-bordered mt-4">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nume</th>
-                <th scope="col">Varsta</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach($oameni as $key => $om): ?>
-                <tr>
-                    <th scope="row"><?= $key + 1 ?></th>
-                    <td><?= $om['nume'] ?></td>
-                    <td><?= $om['varsta'] ?></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php endif; ?>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
